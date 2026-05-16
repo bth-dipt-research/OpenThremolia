@@ -1,0 +1,11 @@
+FROM python:3.11-slim
+
+WORKDIR /tmra-tool
+
+COPY . /tmra-tool
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+ENTRYPOINT ["python", "thremolia_mcp.py"]
+
+CMD ["stdio"]

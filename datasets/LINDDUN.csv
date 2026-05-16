@@ -1,0 +1,337 @@
+﻿ID;Title;Type;Document
+L;Linking;Description;"L: Linking
+Linking refers to any act of associating different data elements to each other (incl. metadata) in such a way that it leads to undesirable privacy implications. This means that the combination of related data items will reveal (additional) information about a data subject (or groups of data subjects). By matching several data items based on recurring attributes or properties, a user profile (or group profile) can be built. Simply put, linking means learning more about an individual (or a group) by matching related data items together. Linking typically relies on a recurring identifier, a combination of attributes (quasi-identifiers) or profile that allows data to be singled out. This means that one can be confident it all belongs to the same individual (without necessarily revealing the individual's identity). In addition, linking can also be applied to data of several individuals by matching similar properties in order to learn additional information about the group as a whole.\r\n\r\nMany systems may require linking data items to meet functional requirements (e.g., keep track of a user's session so they do not need to provide their login credentials for every request). However, `Linking' threat analysis looks at situations in which this ability to tie things together, to learn or infer additional properties is considered problematic or undesirable.
+Examples:
+Linking refers to the process of associating different data items (incl. metadata) in a manner that results in undesirable privacy implications. Combining related data items may reveal (additional) information about a data subject or groups of data subjects.
+Impact:
+Linking becomes problematic when it can result in inference (learning more about individuals), singling out individuals, aggregating additional data to build profiles, etc. This may subsequently give rise to other threats, such as identifying."
+L.1;Linked data;Description;"L.1: Linked data
+Linking through identifiers"
+L.1.1;Unique identifier;Description;"L.1.1: Unique identifier
+Linking based on an identifier that is unique (globally or locally, within the system or across the context boundary)
+Examples:
+Using an email address as an identifier enables the linking of all activities to the same individual, even across multiple services.|An IP address can be used to link multiple visits to the same individual.|All product views in a web shop are linked to the same user because they are logged in.|User IDs can be used to link different requests to the same user.
+Impact:
+Unique identifiers facilitate the linking of new data items to a user profile, accumulating growing amounts of personal data associated with this profile. This can later lead to `Identifying' threats."
+L.2;Linkable data;Description;"L.2: Linkable data
+Linking through the combination or analysis of data"
+L.2.1;Through Combination;Description;"L.2.1: Through Combination
+Linking through combination"
+L.2.1.1;Quasi-identifier combining data of a single individual;Description;"L.2.1.1: Quasi-identifier combining data of a single individual
+Linking through a set of attributes that can serve as a quasi-identifier
+Examples:
+A small set of locations can be used to uniquely link activity to a single user.|A subset of attributes may be sufficient to uniquely link data to a particular individual.|A browser fingerprint combines properties (OS, browser, display size, ...) that together are unique to a website visitor.|Fine-grained raw data is stored that enables linking specific entries to individuals.
+Impact:
+The use of quasi-identifiers enables the linking of new data items to a user profile to gather increasing amounts of personal data, even without unique identifiers."
+L.2.1.2;Combining data of different individuals;Description;"L.2.1.2: Combining data of different individuals
+Linking through combining data
+Examples:
+Relations in a social network indirectly contain information about individuals not on that social network.|Contact lists that are uploaded to services allow service providers to indirectly reconstruct the social graph of the involved individuals.
+Impact:
+The combination of records from multiple different sources enables building a more comprehensive profile on an individual."
+L.2.2;Through Profiling, derivation, or inference;Description;"L.2.2: Through Profiling, derivation, or inference
+Linking through derivation or inference"
+L.2.2.1;Profiling an individual;Description;"L.2.2.1: Profiling an individual
+Personal data of an individual can be analyzed for patterns to link data to that individual. Association is performed at the basis of the data or user actions.
+Examples:
+By applying sentiment analysis to faces in pictures, the emotional state of an individual can be derived.|The frequency of data exchanges from a health monitoring device allows an adversary to infer a patient's medical condition.|External service requests may be linked to the same user by inferring they are sent in the context of an ongoing session. |Shopping recommendations sent to consumers are based on the degree of similarity to other consumers.
+Impact:
+Deriving patterns from the data can facilitate the linking of data that was not intended to be linked.|Timing patterns of messages can be used to link requests to construct profiles.|Indirect links can reveal sensitive data about individuals that are not involved in the original dataset."
+L.2.2.2;Profiling a group of individuals;Description;"L.2.2.2: Profiling a group of individuals
+Data of a single individual leads to insights about a larger group of individuals. Knowledge transfers to other individuals through known relations of group membership or similarity.
+Examples:
+Findings obtained through DNA analysis (e.g., genetic predisposition for certain illnesses) by an individual may also apply to their family members.|Readings obtained from an energy consumption meter do not apply to an individual but to households. Consumption patterns obtained for an individual (e.g. heating cost) may be generalized."
+L.2.2.3;Profiling an individual through (dis)similarity;Description;"L.2.2.3: Profiling an individual through (dis)similarity
+Applying methods to assess uniqueness or similarity to predict relevant properties.
+Examples:
+Querying the average salary with a strict set of criteria can reveal the salary of an individual employee.|Patterns in a person's writing style can be used to link multiple texts written by the same person.|Unique timing patterns could be recognized to link the use of a service to the same user.|Messages can be analyzed for patterns (e.g., writing style, timing) to link them to the same user.
+Impact:
+When users are distinguishable from one another, user profiles can be constructed to collect growing amounts of personal data associated with each profile. This can later lead to `Identifying' threats."
+I;Identifying;Description;"I: Identifying
+Personal data is by definition related to a data subject. Many systems may require identification of data subjects to meet their system goals. `Identifying' threats however express situations in which the identity of the data subject can be learned through leaks, can be deduced, or inferred when this is unwanted and to be prevented.
+Examples:
+A key distinction is made between threats in the context of identified data (where there is an explicit link), and identifiable data (where the link can be derived based on a pseudonym, identity-revealing content, or a small set of potential subjects, known as the anonymity set, that allow (re-)identification).
+Impact:
+It can be undesirable to know the identity. Working with identified data records requires additional protective measures and can lead to other threats such as unawareness and non-compliance."
+I.1;Identified information;Description;"I.1: Identified information
+Identified Information is requested or processed."
+I.1.1;Processing of identified data;Description;"I.1.1: Processing of identified data
+The system requests and processes identified data
+Examples:
+An online service requests full name and address during the registration process.|The username for a service contains identity data (e.g., ``firstname.lastname'').
+Impact:
+Identified data can severely amplify the impact of a future data breach.|Depending on the context, the identity may reveal very sensitive attributes (e.g., health records)."
+I.1.2;Identified information in metadata;Description;"I.1.2: Identified information in metadata
+The metadata of files or communication involves identified information.
+Examples:
+A software product for authoring documents may automatically insert author information in the metadata of the produced documents.
+Impact:
+The presence of identifying data in metadata may lead to the unintentional identification of a data subject."
+I.2;Identifiable information;Description;"I.2: Identifiable information
+The system processes identifiable information from which the identity of the data subject may be derived."
+I.2.1;Pseudonym;Description;"I.2.1: Pseudonym
+The data contains unique references to the identity of the data subject."
+I.2.1.1;Identifier;Description;"I.2.1.1: Identifier
+The data contains a unique reference to the identity of the data subject.
+Examples:
+The (re)use of an email address facilitates easy combination with other data, leading to the identification of the individual.|IP addresses in communication can be used to uniquely identify an individual.|Globally unique identifiers (e.g., SSN) are replaced by internal ids. These are still tied to the actual identity.
+Impact:
+Pseudonyms facilitate the aggregation of data on the same individual (see linking). Storing a substantial amount of data increases the possibility of identifying the individual behind it."
+I.2.1.2;Quasi-identifier;Description;"I.2.1.2: Quasi-identifier
+The data contains combinations of attributes that are unique to a data subject.
+Examples:
+Browser fingerprinting entails the combination of various properties to create a unique identifier, serving as a pseudonym for the user.|A dataset removes names and reduces addresses to cities. Nevertheless, a combination of various attributes (city, birth date, language preference, etc.) could still be adequate to identify individuals."
+I.2.2;Revealing attributes;Description;"I.2.2: Revealing attributes
+A number of revealing attributes are included in the data which support the identification of the data subject.
+Examples:
+When an individual shares detailed data (such as location, employer, device type, etc.) in a feedback form, the provided information may be revealing enough to uniquely identify that person.
+Impact:
+Inadvertently providing identifiable attributes in user-submitted data can lead to the unintentional identification of the individual."
+I.2.3;The data subject is distinguishable from others;Description;"I.2.3: The data subject is distinguishable from others
+The anonymity set is too small, which allows singling out an individual data subject.
+Examples:
+User search queries, such as looking up nearby businesses or info about a rare illness, can be highly specific and may lead to identification.|A person's consistent access at a particular time each week could link their visits even when they are not logged into their account.|An individual's gait can be used to uniquely identify them.|Queries with a very small result set could deliver results unique to a particular individual.|Authentication with biometrics (e.g., fingerprint or iris) work based on being able to uniquely link these biometric properties to a single user.|The use of facial recognition processing on, for example, profile images can enable the derivation of attributes that can be combined to identify the depicted individual.
+Impact:
+Even without identity information, user actions or data may be very specific and unintentionally reveal the identity."
+Nr;Non-repudiation;Description;"Nr: Non-repudiation
+Non-repudiation threats represent outcomes in which an individual is not able to deny certain claims specifically about their involvement in the system, or more broadly any claim pertaining themselves, as a consequence of the data collected, shared or an action taken by the individual (or other individuals) in the system.\r\n\r\nNon-repudiation threats for a claim involve two key elements: (i) the system maintains evidence or proof of a fact or action related to an individual, impacting the plausible deniability (e.g., logfiles from an involved party that could be tampered with, or digital signatures providing strong guarantees of the authenticity of the evidence), (ii) that evidence is attributable to an individual. Both evidences can have varying strength which will result in a varying non-repudiation threat impact.
+Examples:
+The system retains evidence related to a particular action or fact, influencing the ability to deny claims. Examples of this evidence include log files, digital signatures, document metadata, and watermarked data, all of which can be attributed to an individual.
+Impact:
+Non-repudiation threats impact the plausible deniability of individuals, rendering them unable to refute specific actions or involvements, such as submitting a whistleblower report or casting a vote for someone."
+Nr.1;Attributable data evidence;Description;"Nr.1: Attributable data evidence
+A data record or message is (or can be) attributed to a user or data subject."
+Nr.1.1;Data;Description;"Nr.1.1: Data
+Data can be used to prevent an individual from denying certain claims.
+Examples:
+Transmissions are logged as evidence of communication.|Random data could be an indication that there is encrypted data, especially if it concerns the full drive or external device.|An encrypted office document still has the office file format, but requires a password to open it. This document format makes it clear that there is encrypted data.|An account with a corporate email address eliminates the employee's deniability of having used that service.|The use of a corporate mail address makes it impossible to deny being affiliated with that organization.|System administrators can access log files linking an entry in an internal complaint system to the individual employee.
+Impact:
+Identity information can magnify the impact.|Depending on the context (e.g., medical, whistleblower), this can have a large impact on the data subject."
+Nr.1.2;Signed data;Description;"Nr.1.2: Signed data
+Signed data can prevent deniability.
+Examples:
+A digitally signed email prevents the user from later denying having written the message.|A common spam countermeasure (DKIM) involves signing outgoing emails, this prevents users from denying the authenticity of leaked or stolen emails.|Data stored on a blockchain cannot be modified, eliminating the deniability of claims related to this data.
+Impact:
+Signatures provide strong non-repudiation, as they can also be verified by third parties.|Append-only storage systems make it impossible for the data subject to later remove their personal data."
+Nr.1.3;Metadata;Description;"Nr.1.3: Metadata
+Metadata can contain unintended data impacting deniability claims about that data.
+Examples:
+Author or revision metadata in documents prevents deniability.
+Impact:
+The unintentional inclusion of metadata with data or transmissions may impact deniability claims."
+Nr.1.4;Embedded/Hidden Data;Description;"Nr.1.4: Embedded/Hidden Data
+Embedded or hidden data can be used to reveal additional information impacting deniability claims about the data.
+Examples:
+Data watermarked with hidden artifacts (uniquely linked to a person) can be used to track the person revealing or disclosing the data afterwards.|Remote resources (e.g. image in email) are automatically loaded to track the user opening it.|Secrets shared with one person, or modified for each recipient can serve as evidence of the disclosure of that data by that person.
+Impact:
+Hidden/embedded data can prevent a user from denying claims about the data."
+Nr.2;Attributable action side-effect evidence;Description;"Nr.2: Attributable action side-effect evidence
+Action side-effects can cause an action to be attributable to an individual.
+Examples:
+Read notifications serve as evidence that the user has opened/read the message.|An individual's browser history may be used to substantiate claims about their online activities.|Actions can be logged as evidence.
+Impact:
+Some actions may trigger side-effects that impact deniability claims regarding those actions."
+D;Detecting;Description;"D: Detecting
+Detecting threats represent cases of becoming aware of data subject involvement, membership, or participation to the system by observing existence of relevant information, through (i) observed communication, (ii) observed application side-effects (e.g., temporary files in the file system), or (iii) through system responses that may give away information about the existence of these elements. This final case addressed both threats caused by adversaries trying to probe the system (i.e., evoke responses that give away information about existence of data records), or system responses that accidentally leak information about the existence of specific records.\r\n\r\nIt is important to note that detecting threats do not require access to the data itself. Being able to observe existing of stored data, side-effects of processes, or communication flows between certain parties can be sufficient to deduce additional relevant information about an individual.\r\n\r\nThese threats involve an active threat actor, such as a receiving party that can deduce more information than they were suppose to, an outsider who observes the communication channel, or an insider (e.g. employee with internal access).
+Exampels:
+Detecting can be done by observing communication flows, including interactions with a system or service, and communication between systems. Detecting can also be achieved by observing application side effects or system responses, where the existence of certain data may be inadvertently revealed by the system.
+Impact:
+Observing or ascertaining the existence can be sufficient to learn sensitive information about individuals. Furthermore, detecting also facilitates linking and identifying, allowing for the inference of additional information about individuals."
+D.1;Observed communications;Description;"D.1: Observed communications
+Detecting through observed communications
+Examples:
+Observing communication with a service to infer that a person is a user (e.g., adult website).|Communication with a telemedicine service implies the user is a patient.|Participation in the Tor network can be determined by observing traffic.|Wireless transmissions are detectable by other devices nearby.
+Impact:
+In sensitive contexts (medical, whistleblower) detecting service usage may have a severe impact on the user."
+D.2;Application side effect;Description;"D.2: Application side effect
+Detecting through (trans)action side effects
+Examples:
+Log files on a shared system reveal applications used or actions taken by other users.|Deleted applications may leave behind traces (configuration, temporary files).|When steganography is used to hide data, the increased file size may still indicate the existence of that hidden data.|A user reporting a positive test result in a contact tracing app may trigger observable communication that discloses medical information.
+Impact:
+Sensitive information may be deduced from observed side effects, such as communication."
+D.3;System responses;Description;"D.3: System responses
+The existence of an item of interest is revealed in a system response (which can be evoked deliberately or given accidentally).
+Examples:
+A `wrong password' error message reveals the existence of the account.|A firewall responding with `port closed' reveals the existence of a device at the IP address.|An error message stating `insufficient access rights' may inadvertently leak the existence of a specific record.|The existence of email accounts can be inferred from bounced emails.|An error message stating `address already registered' when subscribing to a political newsletter reveals a current member.|To speed up the loading of websites, browsers can provide certain remote resources from their local cache. This enables detecting which resources were already cached.
+Impact:
+Being able to detect the existence of certain items can be a stepping stone to security threats.|Simply knowing the existence of data may be sufficient to infer sensitive information."
+DD;Data Disclosure;Description;"DD: Data Disclosure
+A data disclosure is the transfer of personal data across a boundary, i.e. the collection of data by the system or the transfer of data to a known or unknown third party. From a privacy perspective, these disclosures should take into account the best interest of the involved data subjects. The minimality principle is key here. Only collect, process, store and share the strictly required personal data. Data disclosure threats represent cases in which disclosure of personal data is considered problematic. More precisely, `Data Disclosure' threats represent cases in which either the explicit (i.e. intended or designed) or the implicit (i.e. unintended or consequential) disclosure of personal data is considered avoidable.\r\n\r\nWhen disclosures happen intentionally and by design (i.e. the system collects personal data to perform its functional goals) it is considered explicit. Conversely, disclosures are deemed implicit when they are indirect (i.e. through metadata or derived from other data that is disclosed).
+Examples:
+Disclosures should consider the best interests of the involved data subjects, with the minimization principle playing a crucial role. The system should be designed to only collect, process, store, and share the minimum amount of personal data necessary for the required functionality.
+Impact:
+In addition to legal implications (non-compliance), this also raises the likelihood and impact of theft, data leaks, and unwanted or accidental disclosure to unintended parties. The more data is disclosed to and by the system, the more likely it can be abused for detecting, linking, identifying, or non-repudiation threats by any of the threat sources considered."
+DD.1;Unnecessary data types;Description;"DD.1: Unnecessary data types
+Depending on the context, data can be perceived highly sensitive, and should therefore only be collected and processed when strictly required."
+DD.1.1;Data type sensitivity;Description;"DD.1.1: Data type sensitivity
+More sensitive data types are collected than functionally required by the system.
+Examples:
+Tracking a patient's weight is pertinent for dieting apps but not for a contact tracing application.
+Impact:
+Processing excessively sensitive data amplifies the impact of a potential data breach, thereby increasing the consequences for the affected individuals."
+DD.1.2;Data type granularity;Description;"DD.1.2: Data type granularity
+Disclosed personal data is of a more fine-grained level of granularity than needed.
+Examples:
+A smart meter shares realtime measurements rather than the aggregated consumption."
+DD.1.3;Data type encoding;Description;"DD.1.3: Data type encoding
+The encoding of the data includes additional personal data that is not functionally needed.
+Examples:
+A camera application on a smartphone does not necessarily need to record the picture's location.|The transmission of geo-tagged pictures also includes location data of the individual that took the pictures.|Documents processed may automatically include metadata that contain personal data such as the author or reviewer of a document."
+DD.2;Excessive volume;Description;"DD.2: Excessive volume
+The characteristic involves the volume of personal data that is collected and processed."
+DD.2.1;Amount;Description;"DD.2.1: Amount
+An excessive amount of personal data is processed beyond what is functionally needed.
+Examples:
+A generic service that is not age-restricted should not request a user's age."
+DD.2.2;Frequency;Description;"DD.2.2: Frequency
+Personal data is processed more frequently than functionally needed.
+Examples:
+Recording patient weight on a weekly or monthly basis may suffice; collecting such information every half hour is unnecessary.
+Impact:
+Regular data collection results in an increased dataset, potentially giving rise to additional privacy threats, such as data mining for patterns."
+DD.2.3;Involved data subjects;Description;"DD.2.3: Involved data subjects
+Personal data is processed of more data subjects than functionally needed.
+Examples:
+Posts on social networks frequently include personal data about other individuals."
+DD.3;Unnecessary processing;Description;"DD.3: Unnecessary processing
+This characteristic considers whether the processing and treatment of the personal data is actually necessary for achieving the functional goals of the system."
+DD.3.1;Treatment, analysis, enrichment, transformation;Description;"DD.3.1: Treatment, analysis, enrichment, transformation
+Personal data is further treated, analyzed, and enriched in a way that is not necessary to achieve the functionality of the system.
+Examples:
+A camera application on a smartphone does not need to perform face-based recognition or emotion detection.|Analyzing a user's blog posts for language proficiency is unnecessary for blogging functionality.|User profiles accumulate unnecessary details over time, tracking a broad range of actions or service usage that is not essential for the provided functionality.|Sentiment analysis can be applied to faces in pictures to derive the emotional state of the individual in the photo.
+Impact:
+Processing the data can be used to learn additional sensitive information."
+DD.3.2;Propagation;Description;"DD.3.2: Propagation
+Data is accessible by or propagated to other services where it is not needed.
+Examples:
+Location data from a navigation application is propagated to all the other applications (e.g., calendar, mail)."
+DD.3.3;Implicit data disclosure;Description;"DD.3.3: Implicit data disclosure
+Data is implicitly collected as a side-effect of explicit data disclosures or data flows.
+Examples:
+Data gathered on the usage of a service (such as connection times or durations)."
+DD.3.4;Duration/retention;Description;"DD.3.4: Duration/retention
+Personal data is processed or kept longer than functionally needed.
+Examples:
+Retaining the email addresses of newsletter subscribers long after they have unsubscribed.
+Impact:
+Storing data longer than needed serves no further purpose and increases the impact of a data breach."
+DD.4;Involved parties and exposure;Description;"DD.4: Involved parties and exposure
+Personal data is excessively exposed, either to external parties known and anticipated at design time (which are typically limited, targeted and scoped), or it is published or broadcasted by the system (which greatly amplifies the potential risk)."
+DD.4.1;Involved parties;Description;"DD.4.1: Involved parties
+Personal data made accessible to more parties than functionally necessary."
+DD.4.1.1;Predetermined set of parties;Description;"DD.4.1.1: Predetermined set of parties
+The parties with whom personal data is shared are known up front. This set of parties is static and fixed.
+Examples:
+In a health application, even if collecting patient weight data is considered necessary, sharing this data with third party advertisers is unnecessary and harmful.|Using third party tracking and analytics services on websites involves transferring personal data about the user and their site usage to third parties.|When using third party service providers for email delivery, personal data (e.g. about sender and recipients) is directly shared with these third parties.|Speech data sent to a third party transcription service can apart from speech content reveal additional information about the individual such as mother tongue, gender, etc."
+DD.4.1.2;Dynamic set of parties;Description;"DD.4.1.2: Dynamic set of parties
+The parties with whom personal data is shared are determined dynamically and may change frequently. 
+Examples:
+Personal data is disclosed to other users of the service."
+DD.4.2;Availability/accessibility of data;Description;"DD.4.2: Availability/accessibility of data
+Personal data is published more broadly than necessary.
+Examples:
+In a medical application, while collecting patient weight data is deemed necessary, making such datasets publicly available would be unnecessary and harmful.|Posting personal data of other people to publicly shame them, extort them, or trigger vigilante attacks, etc.|Searching user by phone number can be used to discover/confirm someone else's phone number.|The original publication of a company's foundation reveals the home addresses of the founders.|Query interfaces to searcj for people working in specific area, may reveal their location of employment.|Posting private messages to a person through a social network in a public forum that may be seen and monitored my many.|The lack of encryption enables an external adversary to read the personal data being exchanged with the system.
+Impact:
+Overexposure of personal data may lead to unintended consequences, as others could reuse the data for unforeseen purposes."
+U;Unawareness and Unintervenability;Description;"U: Unawareness and Unintervenability
+This threat category focuses on the lack of support offered to the involved or affected individuals. Evaluating a system in terms of unawareness threats involves assessing the privacy harm caused by the system on a data subject by insufficiently informing, involving, or empowering the data subject in its role and relation to the system.\r\n\r\nThese threats capture three potential lacks of system support: (i) not properly informing data subjects about the collection of data and what is going on with that data in the system (lack of transparency), (ii) insufficiently making users that provide the system with personal data (about themselves or others) aware of the potential privacy harm or impact (lack of user feedback), and (iii) not providing data subjects with the required controls or means to influence how their data are being handled.
+Exaples:
+These threats may arise when there is (1) insufficient transparency (individuals are not aware of the collection or processing of their personal data or the personal data of others), (2) insufficient feedback (individuals are insufficiently informed about the privacy impact they may cause to others by using the system), and (3) insufficient intervenability (individuals cannot access or manage their personal data).
+Impact:
+Unawareness and unintervenability are problematic because individuals are not informed about the potential implications of sharing personal data and cannot access or manage, withdraw, correct, or limit the processing."
+U.1;Unawareness of processing;Description;"U.1: Unawareness of processing
+"
+U.1.1;Unawareness as data subject;Description;"U.1.1: Unawareness as data subject
+Unawareness of processing focuses on data subjects not being aware about the collection, processing, storage, or disclosure of their personal data.
+Examples:
+Data subjects are not aware of the identities of the third parties with whom their data will be shared.|The privacy notice provided to the data subject was not presented in clear and plain language.|Data subjects are unaware that traffic cameras collect not only number plates but also facial images.|Data subjects are unaware that their newspaper uses usage data for targeted advertising purposes.|The data subject is unaware that their personal data is collected from third parties to construct more detailed user profiles for targeted advertising (e.g., Facebook).|The data subject is unaware the data may also be used for marketing purposes.|The data subject was not informed why or for how long their personal data is processed.
+Impact:
+Insufficient transparency may lead to data subjects being unaware that their personal data is utilized for certain purposes, especially if those purposes are different from what was initially indicated."
+U.1.2;Unawareness as a user sharing personal data;Description;"U.1.2: Unawareness as a user sharing personal data
+The user does not need to be the data subject.
+Examples:
+A user posting a picture on social media may not be aware that others in the picture are automatically tagged with a facial recognition system.|Using a DNA testing service can entail sharing medical information about family members.|A service invites a user to share their address book to find contacts on a service.
+Impact:
+Users may not realize that they are unintentionally sharing personal data belonging to other individuals."
+U.2;Lack of data subject control;Description;"U.2: Lack of data subject control
+Lack of control considers the lack of control of a data subject to choose and customize which, how, and how long personal data is processed."
+U.2.1;Preferences;Description;"U.2.1: Preferences
+The lack of control of a data subject to set preferences or consent in how personal data is processed (or collected/stored).
+Examples:
+The data subject is unable to set appropriate preferences on which data is shared and why.|The data subject is unable to set their consent preferences for the processing of personal data.
+Impact:
+Appropriate control mechanisms are required to record data subject preferences and keep track of how the data may be further processed."
+U.2.2;Access;Description;"U.2.2: Access
+The lack of control in accessing the personal data that is being processed.
+Examples:
+The data subject is unable to access their personal data held and processed by the service.|The sensor data from a wearable is transmitted to a lifestyle tracking app, but the user cannot access statistics and information derived from their data.|It is not possible for a data subject to request access, neither directly through the system nor indirectly through a helpdesk.
+Impact:
+Lack of access may violate the legal rights of data subjects."
+U.2.3;Rectification/erasure;Description;"U.2.3: Rectification/erasure
+The lack of control in rectifying incorrect data or removing personal data that is no longer relevant.
+Examples:
+The data subject is unable to correct their personal data.|When a data subject deletes their social media account, the account is disabled, but the actual data is not erased. |A data subject is unable to update their home address after relocating.
+Impact:
+Data subjects have the right to rectify incorrect personal data or request the removal of data that is no longer relevant or needed."
+Nc;Non-compliance;Description;"Nc: Non-compliance
+Privacy-related risks should not be focused upon in a vacuum, and a privacy risk assessment is ideally complemented with broader attention to broader risk perspectives, such as legal risk, and cybersecurity risk.
+Examples:
+When addressing potential privacy issues, also consider regulatory compliance, data lifecycle management, and cybersecurity risk. Pay specific attention to cases in which these aspects lead to privacy problems.
+Impact:
+Violation of regulatory compliance obligations can lead to severe fines for the organization."
+Nc.1;Regulatory non-compliance;Description;"Nc.1: Regulatory non-compliance
+There are legal consequences of the threats and/or processing activities described."
+Nc.1.1;GDPR;Description;"Nc.1.1: GDPR
+GDPR-related non-compliance threat characteristics"
+Nc.1.1.1;Insufficient data subject controls;Description;"Nc.1.1.1: Insufficient data subject controls
+Support for the different data subject rights is lacking."
+Nc.1.1.2;Violation of data minimization principle;Description;"Nc.1.1.2: Violation of data minimization principle
+More personal data is processed than is actually needed.
+Examples:
+The system collects or processes more data than is actually needed for the purposes of the processing.|A web shop collects gender, phone number, date of birth, etc., while none of this information is necessary for billing.
+Impact:
+Having more data than needed amplifies the impact of data breaches.|Legislation such as the GDPR requires you not to process more than legally necessary for the processing."
+Nc.1.1.3;Unlawful processing of personal data;Description;"Nc.1.1.3: Unlawful processing of personal data
+Personal data is not processed in a lawful way"
+Nc.1.1.3.1;Invalid consent;Description;"Nc.1.1.3.1: Invalid consent
+Personal data collection and processing does not rely on valid consent.
+Examples:
+The processing relies on consent but there is no way for the data subject to give or revoke consent.|The consent is not freely given but forced. A user cannot access the service without giving consent.
+Impact:
+Legislation such as the GDPR imposes specific requirements for valid consent, not meeting these can result in heavy fines."
+Nc.1.1.3.2;Lawfulness problems not related to consent;Description;"Nc.1.1.3.2: Lawfulness problems not related to consent
+Lawfulness problems not related to consent, such as incorrect lawful ground, automated decision making on sensitive personal data, etc.
+Examples:
+A smart TV collects a user's viewing data without consent or any other lawful ground.|A loan application is rejected without any possibility of human intervention.|A system makes automated decisions but relies on legitimate interest rather than explicit consent or contract.
+Impact:
+The GDPR imposes specific requirements for valid processing of personal data. Not meeting these can result in heavy fines."
+Nc.1.1.4;Violation of storage limitation principle;Description;"Nc.1.1.4: Violation of storage limitation principle
+Personal data is stored longer than needed.
+Examples:
+Personal data is stored for a longer period than actually necessary to perform the processing.|A website retains user account data long after users have closed their account and withdrawn their consent.
+Impact:
+Having more data than needed amplifies the impact of data breaches.|Legislation such as the GDPR requires you not to process more than legally necessary for the processing."
+Nc.1.2;Generic regulatory non-compliance;Description;"Nc.1.2: Generic regulatory non-compliance
+A general description of non-compliance with regulations (non-specific to a particular legal regime or environment)
+Examples:
+The system processes information of EU citizens without a valid legal ground under GDPR.|The system shares user information with third parties, violating 'Do Not Sell My Data' rights under the CCPA.
+Impact:
+Non-compliance with local regulations may lead to hefty fines or other sanctions.|High-profile complaint cases or lawsuits may lead to negative media exposure and reputational damage."
+Nc.2;Improper personal data management;Description;"Nc.2: Improper personal data management
+This characteristic groups a number of data management risks that may have privacy outcomes or vice versa, privacy threats that may lead to overarching data management problems.
+Examples:
+There is no clear policy or mechanism to enforce deletion of data that is no longer needed.|The organizational roles and responsibilities surrounding data management in the system are not sufficiently defined.
+Impact:
+Inadequate or nonexistent data lifecycle management can result in a loss of overview of the data within the system and its maintenance, posing concerns not only for privacy and data protection but also security and availability."
+Nc.3;Insufficient cybersecurity risk management;Description;"Nc.3: Insufficient cybersecurity risk management
+A lack of proper cybersecurity risk management with specific attention to the interplay with privacy risks.
+Examples:
+No security assessment was performed of the software.|There are no processes in place to ensure software and services are kept up to date.|The organization does not use appropriate access control mechanisms to limit access of employees to personal data.
+Impact:
+The security of the system plays a crucial role in safeguarding the privacy of individuals whose data is processed. Personal data breaches can result in significant fines and reputational damage."
+Nc.4;Non-compliance with privacy standards and best practices;Description;"Nc.4: Non-compliance with privacy standards and best practices
+
+Examples:
+The system does not adhere to the best practices and principles outlined in the relevant ISO norms on data protection and privacy-by-design.|Privacy risks are not classified and managed using a standardized methodology such as the NIST Privacy Framework.
+Impact:
+Non-adherence to industry standards and best practices makes it more difficult to demonstrate compliance with applicable laws."

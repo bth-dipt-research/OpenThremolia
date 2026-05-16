@@ -1,0 +1,9 @@
+__pycache__/
+recent_chats/
+.pytest_cache/
+.venv/
+venv/
+.git/
+.idea/
+logs/
+.env

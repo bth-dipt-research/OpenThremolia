@@ -1,0 +1,136 @@
+﻿ID;Title;Type;Document
+ML01:2023;Input Manipulation Attack;Description;"ML01:2023: Input Manipulation Attack - Description
+Input Manipulation Attacks is an umbrella term, which include Adversarial Attacks, a type of attack in which an attacker deliberately alters input data to mislead the model."
+ML01:2023;Input Manipulation Attack;How to Prevent;"ML01:2023: Input Manipulation Attack - How to Prevent
+Adversarial training: One approach to defending against input manipulation attack is to train the model on adversarial examples. This can help the model become more robust to attacks and reduce its susceptibility to being misled.
+Robust models: Another approach is to use models that are designed to be robust against manipulative attacks, such as adversarial training or models that incorporate defense mechanisms.
+Input validation: Input validation is another important defense mechanism that can be used to detect and prevent input manipulation attacks. This involves checking the input data for anomalies, such as unexpected values or patterns, and rejecting inputs that are likely to be malicious."
+ML01:2023;Input Manipulation Attack;Example Attack Scenarios;"ML01:2023: Input Manipulation Attack - Example Attack Scenarios
+Scenario #1: Input manipulation of Image Classification systems
+A deep learning model is trained to classify images into different categories, such as dogs and cats. An attacker manipulates the original image that is very similar to a legitimate image of a cat, but with small, carefully crafted perturbations that cause the model to misclassify it as a dog. When the model is deployed in a real-world setting, the attacker can use the manipulated image to bypass security measures or cause harm to the system.
+Scenario #2: Manipulation of network traffic to evade intrusion detection systems
+A deep learning model is trained to detect intrusions in a network. An attacker manipulates network traffic by carefully crafting packets in such a way that they will evade the model's intrusion detection system. The attacker can alter the features of the network traffic, such as the source IP address, destination IP address, or payload, in such a way that they are not detected by the intrusion detection system. For example, the attacker may hide their source IP address behind a proxy server or encrypt the payload of their network traffic. This type of attack can have serious consequences, as it can lead to data theft, system compromise, or other forms of damage."
+ML02:2023;Data Poisoning Attack;Description;"ML02:2023: Data Poisoning Attack - Description
+Data poisoning attacks occur when an attacker manipulates the training data to cause the model to behave in an undesirable way."
+ML02:2023;Data Poisoning Attack;How to Prevent;"ML02:2023: Data Poisoning Attack - How to Prevent
+Data validation and verification: Ensure that the training data is thoroughly validated and verified before it is used to train the model. This can be done by implementing data validation checks and employing multiple data labelers to validate the accuracy of the data labeling.
+Secure data storage: Store the training data in a secure manner, such as using encryption, secure data transfer protocols, and firewalls.
+Data separation: Separate the training data from the production data to reduce the risk of compromising the training data.
+Access control: Implement access controls to limit who can access the training data and when they can access it.
+Monitoring and auditing: Regularly monitor the training data for any anomalies and conduct audits to detect any data tampering.
+Model validation: Validate the model using a separate validation set that has not been used during training. This can help to detect any data poisoning attacks that may have affected the training data.
+Model ensembles: Train multiple models using different subsets of the training data and use an ensemble of these models to make predictions. This can reduce the impact of data poisoning attacks as the attacker would need to compromise multiple models to achieve their goals.
+Anomaly detection: Use anomaly detection techniques to detect any abnormal behavior in the training data, such as sudden changes in the data distribution or data labeling. These techniques can be used to detect data poisoning attacks early on."
+ML02:2023;Data Poisoning Attack;Example Attack Scenarios;"ML02:2023: Data Poisoning Attack - Example Attack Scenarios
+Scenario #1: Training a spam classifier
+An attacker poisons the training data for a deep learning model that classifies emails as spam or not spam. The attacker executed this attack by injecting the maliciously labeled spam emails into the training data set. This could be done by compromising the data storage system, for example by hacking into the network or exploiting a vulnerability in the data storage software. The attacker could also manipulate the data labeling process, such as by falsifying the labeling of the emails or by bribing the data labelers to provide incorrect labels.
+Scenario #2: Training a network traffic classification system
+An attacker poisons the training data for a deep learning model that is used to classify network traffic into different categories, such as email, web browsing, and video streaming. They introduce a large number of examples of network traffic that are incorrectly labeled as a different type of traffic, causing the model to be trained to classify this traffic as the incorrect category. As a result, the model may be trained to make incorrect traffic classifications when the model is deployed, potentially leading to misallocation of network resources or degradation of network performance."
+ML03:2023;Model Inversion Attack;Description;"ML03:2023: Model Inversion Attack - Description
+Model inversion attacks occur when an attacker reverse-engineers the model to extract information from it."
+ML03:2023;Model Inversion Attack;How to Prevent;"ML03:2023: Model Inversion Attack - How to Prevent
+Access control: Limiting access to the model or its predictions can prevent attackers from obtaining the information needed to invert the model. This can be done by requiring authentication, encryption, or other forms of security when accessing the model or its predictions.
+Input validation: Validating the inputs to the model can prevent attackers from providing malicious data that can be used to invert the model. This can be done by checking the format, range, and consistency of the inputs before they are processed by the model.
+Model transparency: Making the model and its predictions transparent can help to detect and prevent model inversion attacks. This can be done by logging all inputs and outputs, providing explanations for the model's predictions, or allowing users to inspect the model's internal representations.
+Regular monitoring: Monitoring the model's predictions for anomalies can help to detect and prevent model inversion attacks. This can be done by tracking the distribution of inputs and outputs, comparing the model's predictions to ground truth data, or monitoring the model's performance over time.
+Model retraining: Regularly retraining the model can help to prevent the information leaked by model inversion attacks from becoming outdated. This can be done by incorporating new data and correcting any inaccuracies in the model's predictions."
+ML03:2023;Model Inversion Attack;Example Attack Scenarios;"ML03:2023: Model Inversion Attack - Example Attack Scenarios
+Scenario #1: Stealing personal information from a face recognition model
+An attacker trains a deep learning model to perform face recognition. They then use this model to perform a model inversion attack on a different face recognition model that is used by a company or organization. The attacker inputs images of individuals into the model and recovers the personal information of the individuals from the model's predictions, such as their name, address, or social security number.
+The attacker executed this attack by training the model to perform face recognition and then using this model to invert the predictions of another face recognition model. This could be done by exploiting a vulnerability in the model's implementation or by accessing the model through an API. The attacker would then be able to recover the personal information of the individuals from the model's predictions.
+Scenario #2: Bypassing a bot detection model in online advertising
+An advertiser wants to automate their advertising campaigns by using bots to perform actions such as clicking on ads and visiting websites. However, online advertising platforms use bot detection models to prevent bots from performing these actions. To bypass these models, the advertiser trains a deep learning model for bot detection and uses it to invert the predictions of the bot detection model used by the online advertising platform. The advertiser inputs their bots into the model and is able to make the bots appear as human users, allowing them to bypass the bot detection and successfully execute their automated advertising campaigns.
+The advertiser executed this attack by training their own bot detection model and then using it to reverse the predictions of the bot detection model used by the online advertising platform. They were able to access this other model through a vulnerability in its implementation or by using an API. The end result of the attack was the advertiser successfully automating their advertising campaigns by making their bots appear as human users."
+ML04:2023;Membership Inference Attack;Description;"ML04:2023: Membership Inference Attack - Description
+Membership inference attacks occur when an attacker manipulates the model's training data in order to cause it to behave in a way that exposes sensitive information."
+ML04:2023;Membership Inference Attack;How to Prevent;"ML04:2023: Membership Inference Attack - How to Prevent
+Model training on randomized or shuffled data: Training machine learning models on randomized or shuffled data can make it more difficult for an attacker to determine whether a particular example was included in the training dataset.
+Model Obfuscation: Obfuscating the model's predictions by adding random noise or using differential privacy techniques can help prevent membership inference attacks by making it harder for an attacker to determine the model's training data.
+Regularization: Regularization techniques such as L1 or L2 regularization can help prevent overfitting of the model to the training data, which can reduce the model's ability to accurately determine whether a particular example was included in the training dataset.
+Reducing the training data: Reducing the size of the training dataset or removing redundant or highly correlated features can help reduce the information an attacker can gain from a membership inference attack.
+Testing and monitoring: Regularly testing and monitoring the model's behavior for anomalies can help detect and prevent membership inference attacks by detecting when an attacker is attempting to gain access to sensitive information."
+ML04:2023;Membership Inference Attack;Example Attack Scenarios;"ML04:2023: Membership Inference Attack - Example Attack Scenarios
+Scenario #1: Inferencing financial data from a machine learning model
+A malicious attacker wants to gain access to sensitive financial information of individuals. They do this by training a machine learning model on a dataset of financial records and using it to query whether or not a particular individual's record was included in the training data. The attacker can then use this information to infer the financial history and sensitive information of individuals.
+The attacker executed this attack by training a machine learning model on a dataset of financial records obtained from a financial organization. They then used this model to query whether or not a particular individual's record was included in the training data, allowing them to infer sensitive financial information."
+ML05:2023;Model Theft;Description;"ML05:2023: Model Theft - Description
+Model theft attacks occur when an attacker gains access to the model's parameters."
+ML05:2023;Model Theft;How to Prevent;"ML05:2023: Model Theft - How to Prevent
+Encryption: Encrypting the model's code, training data, and other sensitive information can prevent attackers from being able to access and steal the model.
+Access Control: Implementing strict access control measures, such as two-factor authentication, can prevent unauthorized individuals from accessing and stealing the model.
+Regular backups: Regularly backing up the model's code, training data, and other sensitive information can ensure that it can be recovered in the event of a theft.
+Model Obfuscation: Obfuscating the model's code and making it difficult to reverse engineer can prevent attackers from being able to steal the model.
+Watermarking: Adding a watermark to the model's code and training data can make it possible to trace the source of a theft and hold the attacker accountable.
+Legal protection: Securing legal protection for the model, such as patents or trade secrets, can make it more difficult for an attacker to steal the model and can provide a basis for legal action in the event of a theft.
+Monitoring and auditing: Regularly monitoring and auditing the model's use can help detect and prevent theft by detecting when an attacker is attempting to access or steal the model."
+ML05:2023;Model Theft;Example Attack Scenarios;"ML05:2023: Model Theft - Example Attack Scenarios
+Scenario #1: Stealing a machine learning model from a competitor
+A malicious attacker is working for a competitor of a company that has developed a valuable machine learning model. The attacker wants to steal this model so that their company can gain a competitive advantage and start using it for their own purposes.
+The attacker executed this attack by reverse engineering the company's machine learning model, either by disassembling the binary code or by accessing the model's training data and algorithm. Once the attacker has reverse engineered the model, they can use this information to recreate the model and start using it for their own purposes. This can result in significant financial loss for the original company, as well as damage to their reputation."
+ML06:2023;AI Supply Chain Attacks;Description;"ML06:2023: AI Supply Chain Attacks - Description
+In ML Supply Chain Attacks threat actors target the supply chain of ML models. This category is broad and important, as software supply chain in Machine Learning includes even more elements than in the case of classic software. It consists of specific elements such as MLOps platforms, data management platforms, model management software, model hubs and other specialized types of software that enable ML engineers to effectively test and deploy software."
+ML06:2023;AI Supply Chain Attacks;How to Prevent;"ML06:2023: AI Supply Chain Attacks - How to Prevent
+Verify packages integrity: Before using any packages in your infrastructure or application dependencies, verify the authenticity of the package by checking the digital signature of the package.
+Keep packages versions up-to-date: Constantly monitor the latest versions of the packages in your software supply chain and update your dependencies if you are using outdated software. Use tools such as OWASP Dependency Check. Refer to https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/ for more details
+Install packages from secure sources: Use secure third-party software repositories, such as Anaconda or pip, that enforce strict security measures and have a vetting process for packages.
+Deploy ML infrastructure securely: Follow the vendor's deployment recommendations for MLOps platforms in your stack, limit the access to the web UIs from the Internet, monitor the traffic in the infrastructure for the anomalies and possible attacks. If the infrastructure is deployed in the cloud, ensure to leverage the cloud provider's security features such as Virtual Private Clouds (VPCs), security groups, and identity and access management (IAM) roles to restrict and control access. Implement strict access control measures. Ensure that only authorized personnel have access to the MLOps platforms."
+ML06:2023;AI Supply Chain Attacks;Example Attack Scenarios;"ML06:2023: AI Supply Chain Attacks - Example Attack Scenarios
+Scenario #1: Attack on a Machine Learning project dependency
+The attacker, that wants to compromise a Machine Learning project, knows that the project relies on several open-source packages and libraries.
+During the attack, they modify the code of one of the packages that the project relies on, such as NumPy or Scikit-learn. The modified version of the package is then uploaded to a public repository, such as PyPI, making it available for others to download and use. When the victim organization downloads and installs the package, the malicious code is also installed and can be used to compromise the project.
+This type of attack can be particularly dangerous as it can go unnoticed for a long time, since the victim may not realize that the package they are using has been compromised. The attacker's malicious code can be used to steal sensitive information, modify results, or lead the machine learning model to return erroneous predictions.
+The attacker targets a Machine Learning project that relies on several open-source packages and libraries.
+Scenario #2: Attack on a MLOps software used in the organization
+Organization builds a MLOps pipeline that uses multiple instances of the software supporting the deployment. One of the applications, which is an inference platform, is exposed publicly to the Internet.
+An attacker finds a web interface of the platform available without authentication and gets access to the models, which weren't meant to be exposed publicly.
+Scenario #3: Attack on a ML model hub used by the organization
+An organization decides to use a model from the public model hub. An attacker finds a way to impersonate the organization account in the model hub and then deploys malicious model to the model hub. The organization employees then download the malicious model and the malicious code is ran in the organization's environment."
+ML07:2023;Transfer Learning Attack;Description;"ML07:2023: Transfer Learning Attack - Description
+Transfer learning attacks occur when an attacker trains a model on one task and then fine-tunes it on another task to cause it to behave in an undesirable way."
+ML07:2023;Transfer Learning Attack;How to Prevent;"ML07:2023: Transfer Learning Attack - How to Prevent
+Regularly monitor and update the training datasets: Regularly monitoring and updating the training datasets can help prevent the transfer of malicious knowledge from the attacker's model to the target model.
+Use secure and trusted training datasets: Using secure and trusted training datasets can help prevent the transfer of malicious knowledge from the attacker's model to the target model.
+Implement model isolation: Implementing model isolation can help prevent the transfer of malicious knowledge from one model to another. For example, separating the training and deployment environments can prevent attackers from transferring knowledge from the training environment to the deployment environment.
+Use differential privacy: Using differential privacy can help protect the privacy of individual records in the training dataset and prevent the transfer of malicious knowledge from the attacker's model to the target model.
+Perform regular security audits: Regular security audits can help identify and prevent transfer learning attacks by identifying and addressing vulnerabilities in the system."
+ML07:2023;Transfer Learning Attack;Example Attack Scenarios;"ML07:2023: Transfer Learning Attack - Example Attack Scenarios
+Scenario #1: Training a model on a malicious dataset
+An attacker trains a machine learning model on a malicious dataset that contains manipulated images of faces. The attacker wants to target a face recognition system used by a security firm for identity verification.
+The attacker then transfers the model's knowledge to the target face recognition system. The target system starts using the attacker's manipulated model for identity verification.
+As a result, the face recognition system starts making incorrect predictions, allowing the attacker to bypass the security and gain access to sensitive information. For example, the attacker could use a manipulated image of themselves and the system would identify them as a legitimate user."
+ML08:2023;Model Skewing;Description;"ML08:2023: Model Skewing - Description
+Model skewing attacks occur when an attacker manipulates the distribution of the training data to cause the model to behave in an undesirable way."
+ML08:2023;Model Skewing;How to Prevent;"ML08:2023: Model Skewing - How to Prevent
+Implement robust access controls: Ensure that only authorized personnel have access to the MLOps system and its feedback loops, and that all activities are logged and audited.
+Verify the authenticity of feedback data: Use techniques such as digital signatures and checksums to verify that the feedback data received by the system is genuine, and reject any data that does not match the expected format.
+Use data validation and cleaning techniques: Clean and validate the feedback data before using it to update the training data, to minimize the risk of incorrect or malicious data being used.
+Implement anomaly detection: Use techniques such as statistical and machine learning-based methods to detect and alert on anomalies in the feedback data, which could indicate an attack.
+Regularly monitor the model's performance: Continuously monitor the performance of the model, and compare its predictions with actual outcomes to detect any deviation or skewing.
+Continuously train the model: Regularly retrain the model using updated and verified training data, to ensure that it continues to reflect the latest information and trends."
+ML08:2023;Model Skewing;Example Attack Scenarios;"ML08:2023: Model Skewing - Example Attack Scenarios
+Scenario #1: Financial gain through model skewing
+A financial institution is using a machine learning model to predict the creditworthiness of loan applicants, and the model's predictions are integrated into their loan approval process. An attacker wants to increase their chances of getting a loan approved, so they manipulate the feedback loop in the MLOps system. The attacker provides fake feedback data to the system, indicating that high-risk applicants have been approved for loans in the past, and this feedback is used to update the model's training data. As a result, the model's predictions are skewed towards low-risk applicants, and the attacker's chances of getting a loan approved are significantly increased.
+This type of attack can compromise the accuracy and fairness of the model, leading to unintended consequences and potential harm to the financial institution and its customers."
+ML09:2023;Output Integrity Attack;Description;"ML09:2023: Output Integrity Attack - Description
+In an Output Integrity Attack scenario, an attacker aims to modify or manipulate the output of a machine learning model in order to change its behavior or cause harm to the system it is used in."
+ML09:2023;Output Integrity Attack;How to Prevent;"ML09:2023: Output Integrity Attack - How to Prevent
+Using cryptographic methods: Cryptographic methods like digital signatures and secure hashes can be used to verify the authenticity of the results.
+Secure communication channels: Communication channels between the model and the interface responsible for displaying the results should be secured using secure protocols such as SSL/TLS.
+Input Validation: Input validation should be performed on the results to check for unexpected or manipulated values.
+Tamper-evident logs: Maintaining tamper-evident logs of all input and output interactions can help detect and respond to any output integrity attacks.
+Regular software updates: Regular software updates to fix vulnerabilities and security patches can help reduce the risk of output integrity attacks.
+Monitoring and auditing: Regular monitoring and auditing of the results and the interactions between the model and the interface can help detect any suspicious activities and respond accordingly."
+ML09:2023;Output Integrity Attack;Example Attack Scenarios;"ML09:2023: Output Integrity Attack - Example Attack Scenarios
+Scenario #1: Modification of patient health records
+An attacker has gained access to the output of a machine learning model that is being used to diagnose diseases in a hospital. The attacker modifies the output of the model, making it provide incorrect diagnoses for patients. As a result, patients are given incorrect treatments, leading to further harm and potentially even death."
+ML10:2023;Model Poisoning;Description;"ML10:2023: Model Poisoning - Description
+Model poisoning attacks occur when an attacker manipulates the model's parameters to cause it to behave in an undesirable way."
+ML10:2023;Model Poisoning;How to Prevent;"ML10:2023: Model Poisoning - How to Prevent
+Regularisation: Adding regularisation techniques like L1 or L2 regularization to the loss function helps to prevent overfitting and reduce the chance of model poisoning attacks.
+Robust Model Design: Designing models with robust architectures and activation functions can help reduce the chances of successful model poisoning attacks.
+Cryptographic Techniques: Cryptographic techniques can be used to secure the parameters and weights of the model, and prevent unauthorized access or manipulation of these parameters."
+ML10:2023;Model Poisoning;Example Attack Scenarios;"ML10:2023: Model Poisoning - Example Attack Scenarios
+Scenario #1: Financial gain through model poisoning
+Consider a scenario where a bank is using a machine learning model to identify handwritten characters on cheques to automate their clearing process. The model has been trained on a large dataset of handwritten characters, and it has been designed to accurately identify the characters based on specific parameters such as size, shape, slant, and spacing.
+An attacker who wants to poison a machine learning model may manipulate the parameters of the model by altering the images in the training dataset or directly modifying the parameters in the model. This can result in the model being reprogrammed to identify characters differently. For example, the attacker could change the parameters so that the model identifies the character “5” as the character “2”, leading to incorrect amounts being processed.
+The attacker can exploit this vulnerability by introducing forged cheques into the clearing process, which the model will process as valid due to the manipulated parameters. This can result in significant financial loss to the bank."

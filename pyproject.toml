@@ -1,0 +1,42 @@
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+select = [
+    "ALL", # include all the rules, including new ones
+]
+ignore = [
+    "D100",   # ignore missing docs
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D105",
+    "D106",
+    "D107",
+    "D200",
+    "D205",
+    "D212",
+    "D400",
+    "D401",
+    "D415",
+    "E501",   # ignore long lines
+    "PTH123", # ignore old open()
+]
+
+[tool.ruff.lint]
+fixable = ["ALL"]
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = "dynamic"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = [
+    "ANN001",   # ignore missing type hints
+    "ANN002",
+    "ANN003",
+    "ANN201",
+    "ANN202",
+    "S101",     # ignore assert usage
+    "SLF001",   # ignore private method usage
+]

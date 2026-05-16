@@ -1,0 +1,7 @@
+[theme]
+primaryColor="rgb(61, 157, 243)"
+[server]
+enableXsrfProtection=false
+enableCORS=false
+enableWebsocketCompression=false
+baseUrlPath=""
