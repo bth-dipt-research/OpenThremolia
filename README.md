@@ -14,6 +14,7 @@
 * [Docker usage](#thremolia-project-docker-usage)
     * [Streamlit GUI](#streamlit-gui)
     * [MCP Server](#mcp-server)
+* [Publications](#publications)
 * [Acknowledgement](#acknowledgement)
 * [Contact](#contact)
 * [License](#license)
@@ -155,6 +156,19 @@ When running the MCP server, you must provide an environment file (.env) and opt
 
 > [IMPORTANT]
 > Some MCP clients may have short request timeouts by default! This can lead to "Request timed out" errors due to lengthy report generation time. So please change the setting of your MCP client if you encounter such errors.
+
+# Publications
+
+1. F. V. Jedrzejewski, D. Fucci, O. Adamov. ThreMoLIA: Threat Modeling of Large Language Model-Integrated Applications. *Proc. of EASE 2025*, 17–20 June 2025, Istanbul, Turkey.
+   [ACM DL](https://dl.acm.org/doi/full/10.1145/3756681.3757083)
+
+2. F. V. Jedrzejewski, D. Fucci, O. Adamov. ThreMoLIA: Threat Modeling of Large Language Model-Integrated Applications. *19th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM) — Research Projects Track*, 29 September – 3 October 2025, Honolulu, Hawai'i, USA.
+   [ACM DL](https://dl.acm.org/doi/abs/10.1109/ESEM64174.2025.00068)
+
+3. O. Adamov, D. Fucci, F. Jedrzejewski, R. Britto, N. Saini. Validating Threat Modeling Results with the Help of Vulnerable Test Applications. *32nd International Conference on Telecommunications (ICT)*, 20–22 May 2026, Thessaloniki, Greece.
+   [arXiv:2605.23695](https://arxiv.org/abs/2605.23695)
+
+4. F. Jedrzejewski, D. Fucci, O. Adamov. Effectiveness and Efficiency Benchmark for Threat Modeling of LLM-Integrated Applications. - TBA
 
 # Acknowledgement
 
