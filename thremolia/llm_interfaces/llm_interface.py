@@ -171,7 +171,7 @@ class LLMInterface(abc.ABC):
         ):
             try:
                 self.dbclient.get_collection(name=collection_name)
-            except chromadb.errors.InvalidCollectionException:
+            except chromadb.errors.NotFoundError:
                 collection = self.dbclient.create_collection(
                     name=collection_name,
                     metadata={"type": self.type, "threat_model": collection_name},
@@ -183,7 +183,7 @@ class LLMInterface(abc.ABC):
         for collection_name in self.collection_names:
             try:
                 self.dbclient.get_collection(name=collection_name)
-            except chromadb.errors.InvalidCollectionException:
+            except chromadb.errors.NotFoundError:
                 return False
         return True
 
