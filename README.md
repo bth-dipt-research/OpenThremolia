@@ -166,7 +166,7 @@ When running the MCP server, you must provide an environment file (.env) and opt
    [ACM DL](https://dl.acm.org/doi/abs/10.1109/ESEM64174.2025.00068)
 
 3. O. Adamov, D. Fucci, F. Jedrzejewski, R. Britto, N. Saini. Validating Threat Modeling Results with the Help of Vulnerable Test Applications. *32nd International Conference on Telecommunications (ICT)*, 20–22 May 2026, Thessaloniki, Greece.
-   [arXiv:2605.23695](https://arxiv.org/abs/2605.23695)
+   [IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/11594664)
 
 4. F. Jedrzejewski, D. Fucci, O. Adamov. Effectiveness and Efficiency Benchmark for Threat Modeling of LLM-Integrated Applications. - TBA
 
